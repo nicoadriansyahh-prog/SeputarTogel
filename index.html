@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDBOS | Jadwal Pasaran Togel Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Premium Animated Background -->
+    <div class="bg-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Header & Real-time Clock -->
+        <header class="main-header">
+            <div class="logo-area">
+                <h1><span class="accent-text">SEPUTAR TOGEL</span></h1>
+                <p class="subtitle">Jadwal Pasaran Terlengkap & Terupdate</p>
+            </div>
+
+            <div class="header-right" style="display: flex; gap: 15px; align-items: center;">
+                <button id="btn-settings" class="btn-settings">⚙️ PENGATURAN</button>
+                <div class="live-clock-panel">
+                    <div class="clock-label">
+                        <span class="pulsing-dot"></span> LIVE TIME (WIB)
+                    </div>
+                    <div id="live-time" class="time-display">00:00:00</div>
+                    <div id="live-date" class="date-display">Senin, 01 Jan 2026</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Navigation -->
+        <nav class="main-nav">
+            <button id="nav-dashboard" class="nav-item active">Jadwal Pasaran</button>
+            <button id="nav-calc" class="nav-item">Perhitungan SGP Toto</button>
+            <button id="nav-prediksi" class="nav-item">Prediksi Togel</button>
+        </nav>
+
+        <!-- Markets Grid Layout -->
+        <main id="dashboard-view" class="view-section">
+            <div class="shift-tabs">
+                <button class="shift-tab active" id="tab-pagi">SHIFT PAGI</button>
+                <button class="shift-tab" id="tab-sore">SHIFT SORE</button>
+                <button class="shift-tab" id="tab-malam">SHIFT MALAM</button>
+            </div>
+            <div id="market-grid" class="market-grid">
+                <!-- Market cards injected by script.js -->
+            </div>
+        </main>
+
+        <!-- SGP Toto Calculator Section -->
+        <section id="calc-view" class="view-section hidden">
+            <div class="calc-card">
+                <div class="calc-header">
+                    <h2>PERHITUNGAN SGP TOTO</h2>
+                    <p>Masukkan 7 nomor pengeluaran untuk mendapatkan hasil 4D</p>
+                </div>
+                
+                <div class="calc-body">
+                    <div class="input-board">
+                        <div class="input-row labels">
+                            <div class="label-box">Nomor Urut</div>
+                            <div class="num-box">1</div>
+                            <div class="num-box">2</div>
+                            <div class="num-box">3</div>
+                            <div class="num-box">4</div>
+                            <div class="num-box">5</div>
+                            <div class="num-box">6</div>
+                            <div class="num-box add">ADD</div>
+                        </div>
+                        <div class="input-row cells">
+                            <div class="label-box">Isi Nomor</div>
+                            <div class="input-box"><input type="number" id="val1" placeholder="0"></div>
+                            <div class="input-box"><input type="number" id="val2" placeholder="0"></div>
+                            <div class="input-box"><input type="number" id="val3" placeholder="0"></div>
+                            <div class="input-box"><input type="number" id="val4" placeholder="0"></div>
+                            <div class="input-box"><input type="number" id="val5" placeholder="0"></div>
+                            <div class="input-box"><input type="number" id="val6" placeholder="0"></div>
+                            <div class="input-box add"><input type="number" id="valAdd" placeholder="0"></div>
+                        </div>
+                    </div>
+
+                    <div class="calc-actions">
+                        <button id="btn-process-calc" class="btn-process">HITUNG HASIL 4D</button>
+                    </div>
+
+                    <div id="calc-result-area" class="calc-result-area hidden">
+                        <!-- Results Table -->
+                        <div class="process-table">
+                            <div class="process-step">
+                                <span class="step-lbl">LANGKAH 1 (N2+N3)</span>
+                                <span id="res-step1" class="step-val">-</span>
+                            </div>
+                            <div class="process-step">
+                                <span class="step-lbl">LANGKAH 2 (N4+N5)</span>
+                                <span id="res-step2" class="step-val">-</span>
+                            </div>
+                            <div class="process-step">
+                                <span class="step-lbl">LANGKAH 3 (SUM*2)</span>
+                                <span id="res-step3" class="step-val">-</span>
+                            </div>
+                            <div class="process-step">
+                                <span class="step-lbl">LANGKAH 4 (RUMUS)</span>
+                                <span id="res-step4" class="step-val">-</span>
+                            </div>
+                        </div>
+
+                        <div class="final-result-box">
+                            <div class="final-label">HASIL AKHIR 4D</div>
+                            <div id="final-4d" class="final-4d">0000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Prediksi Togel Section -->
+        <section id="prediksi-view" class="view-section hidden">
+            <div class="prediksi-header">
+                <h2>PREDIKSI OTOMATIS HARIAN</h2>
+                <div class="prediksi-date-badge" id="prediksi-current-date">-- --- ----</div>
+                <p>Angka jitu diupdate otomatis setiap hari berdasarkan algoritma data statistik</p>
+            </div>
+            
+            <div class="prediksi-tabs">
+                <button class="p-tab active" data-shift="pagi">PREDIKSI PAGI</button>
+                <button class="p-tab" data-shift="sore">PREDIKSI SORE</button>
+                <button class="p-tab" data-shift="malam">PREDIKSI MALAM</button>
+            </div>
+
+            <div id="prediksi-grid" class="market-grid">
+                <!-- Prediksi cards injected by script.js -->
+            </div>
+        </section>
+        <footer>
+            <p>Jadwal di atas mempedomani jam tutup dan jam result masing-masing pusat pasaran.</p>
+            <p class="copyright">&copy; WDBOS Professional Togel Dashboard</p>
+        </footer>
+    </div>
+
+    <!-- MODAL PENGATURAN -->
+    <div id="settings-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>⚙️ Pengaturan Jadwal</h2>
+                <button id="btn-close-settings" class="btn-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-controls">
+                    <label>Pilih Shift:</label>
+                    <select id="select-shift">
+                        <option value="pagi">SHIFT PAGI</option>
+                        <option value="sore">SHIFT SORE</option>
+                        <option value="malam">SHIFT MALAM</option>
+                    </select>
+                </div>
+
+                <div class="table-container">
+                    <table class="settings-table">
+                        <thead>
+                            <tr>
+                                <th>Nama Pasaran</th>
+                                <th>Jam Tutup</th>
+                                <th>Jam Result</th>
+                                <th>Situs Resmi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="settings-tbody">
+                            <!-- Diisi oleh JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-reset" class="btn-danger">↺ Reset ke Bawaan</button>
+                <button id="btn-save" class="btn-success">💾 Simpan Perubahan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
