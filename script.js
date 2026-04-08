@@ -6,84 +6,454 @@ const grid = document.getElementById('market-grid');
 
 // Master Data Arrays
 const marketsPagi = [
-    { name: "HOKI DRAW", close: "08:00", result: "08:00", link: "https://hokidraw.com" },
-    { name: "CALIFORNIA", close: "08:25", result: "08:40", link: "https://www.calottery.com/draw-games/daily-4" },
-    { name: "FLORIDA EVENING", close: "08:35", result: "08:45", link: "https://floridalottery.com/games/draw-games/pick-4" },
-    { name: "OREGON 09", close: "08:50", result: "09:00", link: "https://www.oregonlottery.org/pick-4/winning-numbers/" },
-    { name: "HOKI DRAW", close: "09:00", result: "09:00", link: "https://hokidraw.com" },
-    { name: "BANGKOK 0930", close: "09:15", result: "09:30", link: "https://bangkokpoolstoday.com/" },
-    { name: "NEW YORK EVENING", close: "09:25", result: "09:35", link: "https://nylottery.ny.gov/draw-game?game=win4" },
-    { name: "KENTUCKY EVENING", close: "09:45", result: "10:00", link: "https://www.kylottery.com/apps/draw_games/pick4//" },
-    { name: "HOKI DRAW", close: "10:00", result: "10:00", link: "https://hokidraw.com" },
-    { name: "CAROLINA EVENING", close: "10:17", result: "10:22", link: "https://www.wral.com/evening-pick-3-pick-4-and-cash-5/1075494/" },
-    { name: "TOTO CAMBODIA LIVE", close: "10:45", result: "11:00", link: "https://totocambodialive.com/live-draw.html" },
-    { name: "HOKI DRAW", close: "11:00", result: "11:00", link: "https://hokidraw.com" },
-    { name: "CHELSEA11", close: "11:00", result: "11:15", link: "https://chelseapools.co.uk/" },
-    { name: "OREGON 12", close: "11:50", result: "12:00", link: "https://www.oregonlottery.org/pick-4/winning-numbers/" },
-    { name: "HOKI DRAW", close: "12:00", result: "12:00", link: "https://hokidraw.com" },
-    { name: "BULLSEYE", close: "12:00", result: "12:15", link: "https://mylotto.co.nz/results/bullseye" },
-    { name: "POIPET12", close: "12:15", result: "12:30", link: "https://poipetlottery.com/" },
-    { name: "HOKI DRAW", close: "13:00", result: "13:00", link: "https://hokidraw.com" },
-    { name: "TOTO MACAU SIANG", close: "13:00", result: "13:15", link: "https://kick.com/live-ttm4d" },
-    { name: "SYDNEY LOTTO", close: "13:49", result: "14:00", link: "https://kick.com/sydney-lotto-official" },
-    { name: "HOKI DRAW", close: "14:00", result: "14:00", link: "https://hokidraw.com" },
-    { name: "BRUNEI14", close: "14:30", result: "14:45", link: "https://bruneipools.com/" },
-    { name: "HOKI DRAW", close: "15:00", result: "15:15", link: "https://hokidraw.com" },
-    { name: "CHELSEA 15", close: "15:00", result: "15:15", link: "https://chelseapools.co.uk/" },
-    { name: "POIPET15", close: "15:15", result: "15:30", link: "https://poipetlottery.com/" },
-    { name: "TOTOMALI1530", close: "15:15", result: "15:30", link: "https://totomali.com/" }
+    {
+        "name": "HOKI DRAW",
+        "close": "08:00",
+        "result": "08:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "CALIFORNIA",
+        "close": "08:25",
+        "result": "08:40",
+        "link": "https://www.calottery.com/draw-games/daily-4"
+    },
+    {
+        "name": "FLORIDA EVENING",
+        "close": "08:35",
+        "result": "08:45",
+        "link": "https://www.youtube.com/@floridalottery/videos"
+    },
+    {
+        "name": "OREGON 09",
+        "close": "08:50",
+        "result": "09:00",
+        "link": "https://www.oregonlottery.org/pick-4/winning-numbers/"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "09:00",
+        "result": "09:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "BANGKOK 0930",
+        "close": "09:15",
+        "result": "09:30",
+        "link": "https://bangkokpoolstoday.com/"
+    },
+    {
+        "name": "NEW YORK EVENING",
+        "close": "09:25",
+        "result": "09:35",
+        "link": "https://nylottery.ny.gov/draw-game?game=win4"
+    },
+    {
+        "name": "KENTUCKY EVENING",
+        "close": "09:45",
+        "result": "10:00",
+        "link": "https://www.kylottery.com/apps/draw_games/pick4//"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "10:00",
+        "result": "10:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "CAROLINA EVENING",
+        "close": "10:17",
+        "result": "10:22",
+        "link": "https://www.wral.com/evening-pick-3-pick-4-and-cash-5/1075494/"
+    },
+    {
+        "name": "TOTO CAMBODIA LIVE",
+        "close": "10:45",
+        "result": "11:00",
+        "link": "https://totocambodialive.com/live-draw.html"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "11:00",
+        "result": "11:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "CHELSEA11",
+        "close": "11:00",
+        "result": "11:15",
+        "link": "https://chelseapools.co.uk/"
+    },
+    {
+        "name": "OREGON 12",
+        "close": "11:50",
+        "result": "12:00",
+        "link": "https://www.oregonlottery.org/pick-4/winning-numbers/"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "12:00",
+        "result": "12:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "POIPET12",
+        "close": "12:15",
+        "result": "12:30",
+        "link": "https://poipetlottery.com/"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "13:00",
+        "result": "13:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "BULLSEYE",
+        "close": "13:00",
+        "result": "13:15",
+        "link": "https://mylotto.co.nz/results/bullseye"
+    },
+    {
+        "name": "TOTO MACAU SIANG",
+        "close": "13:00",
+        "result": "13:15",
+        "link": "https://kick.com/live-ttm4d"
+    },
+    {
+        "name": "SYDNEY LOTTO",
+        "close": "13:49",
+        "result": "14:00",
+        "link": "https://kick.com/sydney-lotto-official"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "14:00",
+        "result": "14:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "BRUNEI14",
+        "close": "14:30",
+        "result": "14:45",
+        "link": "https://bruneipools.com/"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "15:00",
+        "result": "15:15",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "CHELSEA 15",
+        "close": "15:00",
+        "result": "15:15",
+        "link": "https://chelseapools.co.uk/"
+    },
+    {
+        "name": "POIPET15",
+        "close": "15:15",
+        "result": "15:30",
+        "link": "https://poipetlottery.com/"
+    },
+    {
+        "name": "TOTOMALI1530",
+        "close": "15:15",
+        "result": "15:30",
+        "link": "https://totomali.com/"
+    }
 ];
 
 const marketsSore = [
-    { name: "HOKI DRAW", close: "16:00", result: "16:00", link: "https://hokidraw.com" },
-    { name: "TOTO MACAU SORE", close: "16:00", result: "16:05", link: "https://kick.com/live-ttm4d" },
-    { name: "HUAHIN1630", close: "16:15", result: "16:30", link: "https://huahinlottery.com/" },
-    { name: "HOKI DRAW", close: "17:00", result: "17:00", link: "https://hokidraw.com" },
-    { name: "KING KONG4D SORE", close: "17:00", result: "17:10", link: "https://kick.com/king-kong-pools" },
-    { name: "SINGAPORE", close: "17:30", result: "17:45", link: "https://www.singaporepools.com.sg/landing/en/Pages/index.html", note: "Setiap Hari Selasa dan Jumat Libur", offDays: [2, 5] },
-    { name: "HOKI DRAW", close: "18:00", result: "18:00", link: "https://hokidraw.com" },
-    { name: "MAGNUM4D", close: "18:10", result: "18:35", link: "https://www.magnum4d.my/en", note: "Hanya Buka Tanggal Tertentu Saja" },
-    { name: "HOKI DRAW", close: "19:00", result: "19:00", link: "https://hokidraw.com" },
-    { name: "TOTO MACAU MALAM 1", close: "19:00", result: "19:10", link: "https://kick.com/live-ttm4d" },
-    { name: "CHELSEA 19", close: "19:00", result: "19:15", link: "https://chelseapools.co.uk/" },
-    { name: "POIPET19", close: "19:30", result: "19:50", link: "https://poipetlottery.com/" },
-    { name: "PCSO", close: "19:50", result: "20:10", link: "https://www.pcso.gov.ph/", note: "Setiap Hari Minggu Libur", offDays: [0] },
-    { name: "HOKI DRAW", close: "20:00", result: "20:00", link: "https://hokidraw.com" },
-    { name: "TOTOMALI2030", close: "20:15", result: "20:30", link: "https://totomali.com/" },
-    { name: "HUAHIN2100", close: "20:45", result: "21:00", link: "https://huahinlottery.com/" },
-    { name: "HOKI DRAW", close: "21:00", result: "21:00", link: "https://hokidraw.com" },
-    { name: "CHELSEA 21", close: "21:00", result: "21:15", link: "https://chelseapools.co.uk/" },
-    { name: "NEVADA", close: "21:15", result: "21:30", link: "https://www.nevadalottery.us/" },
-    { name: "BRUNEI21", close: "21:30", result: "21:45", link: "https://bruneipools.com/" },
-    { name: "HOKI DRAW", close: "22:00", result: "22:00", link: "https://hokidraw.com" },
-    { name: "TOTO MACAU MALAM 2", close: "22:00", result: "22:15", link: "https://kick.com/live-ttm4d" },
-    { name: "POIPET22", close: "22:30", result: "22:45", link: "https://poipetlottery.com/" },
-    { name: "HONGKONG LOTTO", close: "22:59", result: "23:15", link: "https://kick.com/hongkong-lotto-official" },
-    { name: "HOKI DRAW", close: "23:00", result: "23:00", link: "https://hokidraw.com" },
-    { name: "TOTO MACAU MALAM 3", close: "23:00", result: "23:15", link: "https://kick.com/live-ttm4d" },
-    { name: "TOTOMALI2330", close: "23:15", result: "23:30", link: "https://totomali.com/" },
-    { name: "KING KONG4D MALAM", close: "23:30", result: "23:35", link: "https://kick.com/king-kong-pools" }
+    {
+        "name": "HOKI DRAW",
+        "close": "16:00",
+        "result": "16:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "TOTO MACAU SORE",
+        "close": "16:00",
+        "result": "16:05",
+        "link": "https://kick.com/live-ttm4d"
+    },
+    {
+        "name": "HUAHIN1630",
+        "close": "16:15",
+        "result": "16:30",
+        "link": "https://huahinlottery.com/"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "17:00",
+        "result": "17:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "KING KONG4D SORE",
+        "close": "17:00",
+        "result": "17:10",
+        "link": "https://kick.com/king-kong-pools"
+    },
+    {
+        "name": "SINGAPORE",
+        "close": "17:30",
+        "result": "17:45",
+        "link": "https://www.singaporepools.com.sg/landing/en/Pages/index.html",
+        "note": "Setiap Hari Selasa dan Jumat Libur",
+        "offDays": [
+            2,
+            5
+        ]
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "18:00",
+        "result": "18:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "MAGNUM4D",
+        "close": "18:10",
+        "result": "18:35",
+        "link": "https://www.magnum4d.my/en",
+        "note": "Hanya Buka Tanggal Tertentu Saja"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "19:00",
+        "result": "19:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "TOTO MACAU MALAM 1",
+        "close": "19:00",
+        "result": "19:10",
+        "link": "https://kick.com/live-ttm4d"
+    },
+    {
+        "name": "CHELSEA 19",
+        "close": "19:00",
+        "result": "19:15",
+        "link": "https://chelseapools.co.uk/"
+    },
+    {
+        "name": "POIPET19",
+        "close": "19:30",
+        "result": "19:50",
+        "link": "https://poipetlottery.com/"
+    },
+    {
+        "name": "PCSO",
+        "close": "19:50",
+        "result": "20:10",
+        "link": "https://www.pcso.gov.ph/",
+        "note": "Setiap Hari Minggu Libur",
+        "offDays": [
+            0
+        ]
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "20:00",
+        "result": "20:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "TOTOMALI2030",
+        "close": "20:15",
+        "result": "20:30",
+        "link": "https://totomali.com/"
+    },
+    {
+        "name": "HUAHIN2100",
+        "close": "20:45",
+        "result": "21:00",
+        "link": "https://huahinlottery.com/"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "21:00",
+        "result": "21:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "CHELSEA 21",
+        "close": "21:00",
+        "result": "21:15",
+        "link": "https://chelseapools.co.uk/"
+    },
+    {
+        "name": "NEVADA",
+        "close": "21:15",
+        "result": "21:30",
+        "link": "https://www.nevadalottery.us/"
+    },
+    {
+        "name": "BRUNEI21",
+        "close": "21:30",
+        "result": "21:45",
+        "link": "https://bruneipools.com/"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "22:00",
+        "result": "22:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "TOTO MACAU MALAM 2",
+        "close": "22:00",
+        "result": "22:15",
+        "link": "https://kick.com/live-ttm4d"
+    },
+    {
+        "name": "POIPET22",
+        "close": "22:30",
+        "result": "22:45",
+        "link": "https://poipetlottery.com/"
+    },
+    {
+        "name": "HONGKONG LOTTO",
+        "close": "22:59",
+        "result": "23:15",
+        "link": "https://kick.com/hongkong-lotto-official"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "23:00",
+        "result": "23:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "TOTO MACAU MALAM 3",
+        "close": "23:00",
+        "result": "23:15",
+        "link": "https://kick.com/live-ttm4d"
+    },
+    {
+        "name": "TOTOMALI2330",
+        "close": "23:15",
+        "result": "23:30",
+        "link": "https://totomali.com/"
+    },
+    {
+        "name": "KING KONG4D MALAM",
+        "close": "23:30",
+        "result": "23:35",
+        "link": "https://kick.com/king-kong-pools"
+    }
 ];
 
 const marketsMalam = [
-    { name: "HOKI DRAW", close: "00:00", result: "00:15", link: "https://hokidraw.com" },
-    { name: "TOTO MACAU PAGI", close: "00:00", result: "00:15", link: "https://kick.com/live-ttm4d" },
-    { name: "KENTUCKY MIDDAY", close: "00:05", result: "00:20", link: "https://play.kylottery.com/en-us/playnow/pick4.html" },
-    { name: "FLORIDA MIDDAY", close: "00:20", result: "00:20", link: "https://floridalottery.com/games/draw-games/pick-4" },
-    { name: "HUAHIN0100", close: "00:45", result: "01:00", link: "https://huahinlottery.com/" },
-    { name: "HOKI DRAW", close: "01:00", result: "01:00", link: "https://hokidraw.com" },
-    { name: "NEW YORK MIDDAY", close: "01:15", result: "01:25", link: "https://nylottery.ny.gov/draw-game?game=win4" },
-    { name: "BANGKOK 0130", close: "01:15", result: "01:30", link: "https://bangkokpoolstoday.com/" },
-    { name: "CAROLINA DAY", close: "01:45", result: "02:00", link: "https://www.wral.com/entertainment/lottery/" },
-    { name: "HOKI DRAW", close: "02:00", result: "02:00", link: "https://hokidraw.com" },
-    { name: "BRUNEI02", close: "02:30", result: "02:45", link: "https://bruneipools.com/" },
-    { name: "OREGON 03", close: "02:50", result: "03:00", link: "https://www.oregonlottery.org/pick-4/winning-numbers/" },
-    { name: "HOKI DRAW", close: "03:00", result: "03:00", link: "https://hokidraw.com" },
-    { name: "HOKI DRAW", close: "04:00", result: "04:00", link: "https://hokidraw.com" },
-    { name: "HOKI DRAW", close: "05:00", result: "05:00", link: "https://hokidraw.com" },
-    { name: "OREGON 06", close: "05:50", result: "06:00", link: "https://www.oregonlottery.org/pick-4/winning-numbers/" },
-    { name: "HOKI DRAW", close: "06:00", result: "06:00", link: "https://hokidraw.com" },
-    { name: "HOKI DRAW", close: "07:00", result: "07:00", link: "https://hokidraw.com" }
+    {
+        "name": "HOKI DRAW",
+        "close": "00:00",
+        "result": "00:15",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "TOTO MACAU PAGI",
+        "close": "00:00",
+        "result": "00:15",
+        "link": "https://kick.com/live-ttm4d"
+    },
+    {
+        "name": "KENTUCKY MIDDAY",
+        "close": "00:05",
+        "result": "00:20",
+        "link": "https://play.kylottery.com/en-us/playnow/pick4.html"
+    },
+    {
+        "name": "FLORIDA MIDDAY",
+        "close": "00:20",
+        "result": "00:20",
+        "link": "https://www.youtube.com/@floridalottery/videos"
+    },
+    {
+        "name": "HUAHIN0100",
+        "close": "00:45",
+        "result": "01:00",
+        "link": "https://huahinlottery.com/"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "01:00",
+        "result": "01:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "NEW YORK MIDDAY",
+        "close": "01:15",
+        "result": "01:25",
+        "link": "https://nylottery.ny.gov/draw-game?game=win4"
+    },
+    {
+        "name": "BANGKOK 0130",
+        "close": "01:15",
+        "result": "01:30",
+        "link": "https://bangkokpoolstoday.com/"
+    },
+    {
+        "name": "CAROLINA DAY",
+        "close": "01:45",
+        "result": "02:00",
+        "link": "https://www.wral.com/entertainment/lottery/"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "02:00",
+        "result": "02:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "BRUNEI02",
+        "close": "02:30",
+        "result": "02:45",
+        "link": "https://bruneipools.com/"
+    },
+    {
+        "name": "OREGON 03",
+        "close": "02:50",
+        "result": "03:00",
+        "link": "https://www.oregonlottery.org/pick-4/winning-numbers/"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "03:00",
+        "result": "03:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "04:00",
+        "result": "04:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "05:00",
+        "result": "05:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "OREGON 06",
+        "close": "05:50",
+        "result": "06:00",
+        "link": "https://www.oregonlottery.org/pick-4/winning-numbers/"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "06:00",
+        "result": "06:00",
+        "link": "https://hokidraw.com"
+    },
+    {
+        "name": "HOKI DRAW",
+        "close": "07:00",
+        "result": "07:00",
+        "link": "https://hokidraw.com"
+    }
 ];
 
 const defaultAppData = {
@@ -422,6 +792,25 @@ btnReset.addEventListener('click', () => {
         
         alert('Data telah direset dan diurutkan sesuai jam bawaan!');
     }
+});
+
+const btnCopyConfig = document.getElementById('btn-copy-config');
+
+btnCopyConfig.addEventListener('click', () => {
+    // Pastikan user sudah simpan data terbaru ke appData
+    const configStr = `// DATA PASARAN TERBARU (Salin semua kode di bawah ini ke chat AI)
+const marketsPagi = ${JSON.stringify(appData.pagi, null, 4)};
+
+const marketsSore = ${JSON.stringify(appData.sore, null, 4)};
+
+const marketsMalam = ${JSON.stringify(appData.malam, null, 4)};`;
+
+    navigator.clipboard.writeText(configStr).then(() => {
+        alert('KODE BERHASIL DISALIN!\n\nLangkah selanjutnya:\n1. Tempelkan (Paste) kode ini ke dalam chat AI.\n2. Berikan instruksi: "Tolong update script.js dengan data ini".\n\nDengan cara ini, pengaturan Anda akan menjadi permanen di file kode.');
+    }).catch(err => {
+        console.error('Gagal menyalin kode: ', err);
+        alert('Gagal menyalin secara otomatis. Silakan cek konsol browser.');
+    });
 });
 
 /* ==========================================
